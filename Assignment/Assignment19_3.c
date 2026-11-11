@@ -1,0 +1,54 @@
+/*
+Accept number of rows and number of columns from user and display below
+pattern.
+iRow = 5 iCol = 5
+Output :
+$ * * * *
+# $ * * *
+# # $ * *
+# # # $ *
+# # # # $
+  **********J********
+  |  1,1  1,2  1,3  1,4  1,5
+ i|  2,1  2,2  2,3  2,4  2,5
+  |  3,1  3,2  3,3  3,4  3,5
+  |  4,1  4,2  4,3  4,5  5,5
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+void pattern(int iRows, int iCol)
+{
+
+for(int i=1; i<=iRows; i++)
+      {
+        for(int j=1; j<=iCol; j++)
+        {
+          if(i == j){
+            printf("$  ");
+          }
+          if(i < j){
+            printf("*  ");
+          }
+           if(i > j){
+            printf("#  ");
+          }
+          
+        }
+          printf("\n");
+      }
+}
+int main()
+{
+  int iValue1 = 0;
+  int ivalue2 = 0;
+
+  printf("enter no of rows ");
+  scanf("%d", &iValue1);
+  printf("enter no of coloumns ");
+  scanf("%d", &ivalue2);
+
+  pattern(iValue1, ivalue2);
+
+  return EXIT_SUCCESS;
+}
